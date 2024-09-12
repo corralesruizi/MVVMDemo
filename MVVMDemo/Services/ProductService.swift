@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct ProductService
+{
+    func getProductInfo()-> String
+    {
+        return "This is an awesome Product page"
+    }
+}

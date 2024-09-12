@@ -6,13 +6,29 @@
 //
 
 import SwiftUI
+import Factory
+import SwiftfulRouting
 
 struct HomeView: View {
+    @InjectedObject(\.homeViewModel) var viewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 40){
+            Button(action: {
+                viewModel.goToCatalog()
+            }, label: {
+                Text("\(viewModel.title)")
+            })
+        }.onAppear(){
+            viewModel.getTitle()
+        }
     }
 }
 
 #Preview {
-    HomeView()
+    RouterView(){ router in
+        let navService = Container.shared.navigationService()
+        navService.addRouter(router: router)
+        return HomeView()
+    }
 }

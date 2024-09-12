@@ -6,3 +6,10 @@
 //
 
 import Foundation
+struct HomeService
+{
+    func getHomeTitle() -> String
+    {
+        return "Welcome to SwiftUI!!"
+    }
+}
