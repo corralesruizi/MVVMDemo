@@ -7,28 +7,24 @@
 
 import SwiftUI
 import Factory
-import SwiftfulRouting
 
 @main
 struct MVVMDemoApp: App {
-    private let navService = Container.shared.navigationService()
+    @ObservedObject var stackNavService = Container.shared.stackNavigationService()
     var body: some Scene {
         WindowGroup {
-            
-            RouterView { router in
-                navService.addRouter(router: router)
-               return navService.getPage(route: AppPage.Main)
+            NavigationStack(path: $stackNavService.routes){
+                HomeView()
             }
         }
     }
 }
 
-//This works but not sure where is the best place to have this extension
 extension Container {
-    var navigationService: Factory<NavigationService> {
-        Factory(self) { NavigationService() }.singleton
+    var stackNavigationService: Factory<StackNavigationService> {
+        Factory(self) { StackNavigationService() }.singleton
     }
- 
+    
     var homeService: Factory<HomeService> {
         Factory(self) { HomeService() }
     }
@@ -47,5 +43,9 @@ extension Container {
     
     var catalogViewModel: Factory<CatalogViewModel> {
         Factory(self) { CatalogViewModel() }
+    }
+    
+    var productViewModel: Factory<ProductDetailViewModel> {
+        Factory(self) { ProductDetailViewModel() }
     }
 }

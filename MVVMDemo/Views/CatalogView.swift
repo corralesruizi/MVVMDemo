@@ -10,6 +10,7 @@ import Factory
 
 struct CatalogView: View {
     @InjectedObject(\.catalogViewModel) var viewModel
+    
     var body: some View {
         VStack(spacing: 20){
             List{
@@ -22,12 +23,19 @@ struct CatalogView: View {
                 Text("Load products")
             })
             
-            Button(action:  {viewModel.showProductDetails() }, label: {
+            Button(action:  {viewModel.showStackProductDetails() }, label: {
                 Text("show product details")
             })
+                
+            Button(action:  {viewModel.goBack() }, label: {
+                    Text("Go back")
+            }).sheet(isPresented: $viewModel.showDetails, content: {
+                ProductDetailView()
+            })
+                
+            }.background(Color.red)
             
-        }.background(Color.red)
-    }
+        }
 }
 
 #Preview {

@@ -7,14 +7,32 @@
 
 import Foundation
 import Factory
+import SwiftUI
 
 class HomeViewmodel:ObservableObject{
     @Published var title: String=""
+    @Published var showLogin:Bool = false
+    
+    private var validLogin = true
     @Injected(\.homeService) private var homeService
-    @Injected(\.navigationService) private var navService
+    @Injected(\.stackNavigationService) private var stackNavService
     
     func goToCatalog(){
-        navService.navigateTo(destination: AppPage.Catalog)
+        
+        if validLogin
+        {
+            stackNavService.navigate(to: Route.catalog)
+        }
+    }
+    
+    func getStarted()
+    {
+        showLogin = true
+    }
+    
+    func hideLogin(action: DismissAction)
+    {
+        action()
     }
     
     func getTitle(){

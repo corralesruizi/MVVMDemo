@@ -6,10 +6,22 @@
 //
 
 import SwiftUI
+import Factory
 
 struct ProductDetailView: View {
+    
+    @Environment (\.dismiss) var dismiss
+    @InjectedObject(\.productViewModel) var viewModel
     var body: some View {
-        Text("Awesome product page")
+        
+        VStack(spacing: 20) {
+            Button(action: {
+                viewModel.goBack(action: dismiss)
+            }, label: {
+                Text("Dissmiss")
+            })
+            Text("Awesome product page")
+        }
     }
 }
 

@@ -10,6 +10,6 @@ struct HomeService
 {
     func getHomeTitle() -> String
     {
-        return "Welcome to SwiftUI!!"
+        return "Get Started"
     }
 }
