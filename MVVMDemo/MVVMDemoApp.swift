@@ -7,13 +7,18 @@
 
 import SwiftUI
 import Factory
+import SwiftfulRouting
 
 @main
 struct MVVMDemoApp: App {
     private let navService = Container.shared.navigationService()
     var body: some Scene {
         WindowGroup {
-            navService.buidAp()
+            
+            RouterView { router in
+                navService.addRouter(router: router)
+               return navService.getPage(route: AppPage.Main)
+            }
         }
     }
 }

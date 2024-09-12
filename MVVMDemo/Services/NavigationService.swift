@@ -20,15 +20,6 @@ class NavigationService
     private var navRouter: AnyRouter?=nil
     
     @ViewBuilder
-    func buidAp() -> some View{
-        RouterView
-        { router in
-            self.navRouter = router
-            return self.getPage(route: .Main)
-        }
-    }
-    
-    @ViewBuilder
      func getPage(route: AppPage) -> some View{
         switch route{
             case AppPage.Main:
