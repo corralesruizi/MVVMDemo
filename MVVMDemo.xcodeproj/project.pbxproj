@@ -11,6 +11,8 @@
 		371342872C929F4F00BD01D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371342862C929F4F00BD01D2 /* ContentView.swift */; };
 		371342892C929F5000BD01D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371342882C929F5000BD01D2 /* Assets.xcassets */; };
 		3713428C2C929F5000BD01D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3713428B2C929F5000BD01D2 /* Preview Assets.xcassets */; };
+		371342942C929F9400BD01D2 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 371342932C929F9400BD01D2 /* Factory */; };
+		371342972C929FA100BD01D2 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 371342962C929FA100BD01D2 /* SwiftfulRouting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371342942C929F9400BD01D2 /* Factory in Frameworks */,
+				371342972C929FA100BD01D2 /* SwiftfulRouting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,10 @@
 			dependencies = (
 			);
 			name = MVVMDemo;
+			packageProductDependencies = (
+				371342932C929F9400BD01D2 /* Factory */,
+				371342962C929FA100BD01D2 /* SwiftfulRouting */,
+			);
 			productName = MVVMDemo;
 			productReference = 371342812C929F4F00BD01D2 /* MVVMDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,10 @@
 				Base,
 			);
 			mainGroup = 371342782C929F4F00BD01D2;
+			packageReferences = (
+				371342922C929F9400BD01D2 /* XCRemoteSwiftPackageReference "Factory" */,
+				371342952C929FA100BD01D2 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
+			);
 			productRefGroup = 371342822C929F4F00BD01D2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +356,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		371342922C929F9400BD01D2 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
+		371342952C929FA100BD01D2 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulRouting.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		371342932C929F9400BD01D2 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 371342922C929F9400BD01D2 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+		371342962C929FA100BD01D2 /* SwiftfulRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 371342952C929FA100BD01D2 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
+			productName = SwiftfulRouting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 371342792C929F4F00BD01D2 /* Project object */;
 }
