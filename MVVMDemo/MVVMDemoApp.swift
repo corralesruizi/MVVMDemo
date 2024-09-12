@@ -39,4 +39,8 @@ extension Container {
     var homeViewModel: Factory<HomeViewmodel> {
         Factory(self) { HomeViewmodel() }
     }
+    
+    var catalogViewModel: Factory<CatalogViewModel> {
+        Factory(self) { CatalogViewModel() }
+    }
 }

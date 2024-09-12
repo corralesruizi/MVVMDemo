@@ -20,6 +20,7 @@
 		371342A62C92A5BC00BD01D2 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371342A52C92A5BC00BD01D2 /* ProductService.swift */; };
 		371342A82C92A79E00BD01D2 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371342A72C92A79E00BD01D2 /* CatalogView.swift */; };
 		371342AA2C92A7C200BD01D2 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371342A92C92A7C200BD01D2 /* ProductDetailView.swift */; };
+		371342AC2C92AEFE00BD01D2 /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371342AB2C92AEFE00BD01D2 /* CatalogViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		371342A52C92A5BC00BD01D2 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		371342A72C92A79E00BD01D2 /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
 		371342A92C92A7C200BD01D2 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		371342AB2C92AEFE00BD01D2 /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				3713429F2C92A24F00BD01D2 /* HomeViewmodel.swift */,
+				371342AB2C92AEFE00BD01D2 /* CatalogViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				3713429A2C92A17C00BD01D2 /* NavigationService.swift in Sources */,
 				371342A42C92A53400BD01D2 /* CatalogService.swift in Sources */,
 				371342852C929F4F00BD01D2 /* MVVMDemoApp.swift in Sources */,
+				371342AC2C92AEFE00BD01D2 /* CatalogViewModel.swift in Sources */,
 				371342AA2C92A7C200BD01D2 /* ProductDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

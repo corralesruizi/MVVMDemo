@@ -29,7 +29,7 @@ class NavigationService
     }
     
     @ViewBuilder
-    private func getPage(route: AppPage) -> some View{
+     func getPage(route: AppPage) -> some View{
         switch route{
             case AppPage.Main:
                 HomeView()
@@ -55,16 +55,13 @@ class NavigationService
         }
     }
     
-    //Will refactor since we are only changing the segue options
-    func present(modal: AppPage){
-        guard let router = navRouter else {
-                print("Navigation Atttempt")
-            return
-        }
+    
+    // this is causeing a warning
+    func present(Sheet: AppPage){
+      
+        let page = getPage(route: Sheet)
         
-        let page = getPage(route: modal)
-        
-        router.showScreen(.sheet){ _ in
+        navRouter?.showScreen(.sheet){ _ in
             page
         }
     }
