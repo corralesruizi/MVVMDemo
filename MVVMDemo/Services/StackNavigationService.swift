@@ -10,7 +10,6 @@ import Foundation
 
 class StackNavigationService:ObservableObject{
     @Published var routes: [Route] = []
-    @Published var showProdDetails = false
     
     func navigate(to screen: Route) {
         routes.append(screen)
@@ -21,11 +20,15 @@ class StackNavigationService:ObservableObject{
     }
     
     func reset() {
-        routes = []
+        routes.removeAll()
     }
     
     func replace(stack: [Route]) {
         routes = stack
     }
     
+    func getCount()
+    {
+        print(routes.count)
+    }
 }

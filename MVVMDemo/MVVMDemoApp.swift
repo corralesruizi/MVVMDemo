@@ -29,6 +29,7 @@ extension Container {
         Factory(self) { HomeService() }
     }
     
+    
     var catalogService: Factory<CatalogService> {
         Factory(self) { CatalogService() }
     }

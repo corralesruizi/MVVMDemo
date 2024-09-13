@@ -16,12 +16,15 @@ struct ProductDetailView: View {
         
         VStack(spacing: 20) {
             Button(action: {
-                viewModel.goBack(action: dismiss)
+                viewModel.dismissModal(action: dismiss)
             }, label: {
                 Text("Dissmiss")
             })
+            
             Text("Awesome product page")
-        }
+        }.onAppear(perform: {
+            viewModel.getViewCount()
+        })
     }
 }
 

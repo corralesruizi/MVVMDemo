@@ -19,21 +19,31 @@ struct CatalogView: View {
                 }
             }
             
+            Button(action:  {viewModel.showCart() }, label: {
+                Text("Show Cart")
+            })
+            
             Button(action:  {viewModel.loadProducts() }, label: {
                 Text("Load products")
             })
             
-            Button(action:  {viewModel.showStackProductDetails() }, label: {
+            Button(action:  {viewModel.goToDetails() }, label: {
+                Text("navigate to product details")
+            })
+                
+            Button(action:  {viewModel.showPorductDetails() }, label: {
                 Text("show product details")
             })
                 
             Button(action:  {viewModel.goBack() }, label: {
                     Text("Go back")
-            }).sheet(isPresented: $viewModel.showDetails, content: {
-                ProductDetailView()
-            })
-                
+            }).sheet(item: $viewModel.sheetRoute){
+                    $0
+                }
             }.background(Color.red)
+            .onAppear(perform: {
+                viewModel.getViewCount()
+            })
             
         }
 }

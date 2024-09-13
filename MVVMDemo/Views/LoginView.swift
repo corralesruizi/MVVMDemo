@@ -5,9 +5,11 @@
 //
 
 import SwiftUI
+import Factory
 
 struct LoginView: View {
     @Environment (\.dismiss) var dismiss
+    @InjectedObject(\.stackNavigationService)  var service: StackNavigationService
     var body: some View {
         VStack(spacing: 20){
             Button(action: {
@@ -17,7 +19,7 @@ struct LoginView: View {
             })
             
             Button(action: {
-                dismiss()
+                service.getCount()
             }, label: {
                 Text("Skip")
             })

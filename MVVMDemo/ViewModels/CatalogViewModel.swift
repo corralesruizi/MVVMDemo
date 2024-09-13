@@ -8,12 +8,11 @@
 import Foundation
 import Factory
 
-class CatalogViewModel:ObservableObject
+class CatalogViewModel:BaseViewModel
 {
     @Published var products: [String]=[]
     @Injected(\.catalogService) private var catalogService
-    @Injected(\.stackNavigationService) private var stackNavService
-    @Published var showDetails: Bool = false
+    @Published var sheetRoute:Route?
     
     func loadProducts(){
         products = catalogService.getPoducts()
@@ -21,16 +20,21 @@ class CatalogViewModel:ObservableObject
     
     func goBack()
     {
-        stackNavService.goBack()
+        navigationService.goBack()
     }
     
-    func showStackProductDetails()
+    func showPorductDetails()
     {
-        showDetails = true
+        sheetRoute = Route.details
     }
     
-    func hideStackProductDetails()
+    func showCart()
     {
-        showDetails = false
+        sheetRoute = Route.cart
+    }
+    
+    func goToDetails()
+    {
+        navigationService.navigate(to: Route.details)
     }
 }

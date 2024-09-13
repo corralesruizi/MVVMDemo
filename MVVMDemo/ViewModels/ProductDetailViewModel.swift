@@ -9,12 +9,7 @@ import Foundation
 import Factory
 import SwiftUI
 
-class ProductDetailViewModel:ObservableObject
+class ProductDetailViewModel:BaseViewModel
 {
-    @Injected(\.stackNavigationService) private var stackNavService
-    
-    func goBack(action: DismissAction )
-    {
-        action()
-    }
+   
 }

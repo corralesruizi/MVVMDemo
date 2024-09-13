@@ -9,19 +9,21 @@ import Foundation
 import Factory
 import SwiftUI
 
-class HomeViewmodel:ObservableObject{
+class HomeViewmodel:BaseViewModel{
+    
     @Published var title: String=""
     @Published var showLogin:Bool = false
     
+    
+    
     private var validLogin = true
     @Injected(\.homeService) private var homeService
-    @Injected(\.stackNavigationService) private var stackNavService
     
     func goToCatalog(){
         
         if validLogin
         {
-            stackNavService.navigate(to: Route.catalog)
+            navigationService.navigate(to: Route.catalog)
         }
     }
     

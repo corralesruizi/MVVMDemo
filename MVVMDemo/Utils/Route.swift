@@ -19,6 +19,7 @@ enum Route {
     case main
     case catalog
     case details
+    case cart
     
 }
 
@@ -26,6 +27,10 @@ extension Route: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.hashValue)
     }
+}
+
+extension Route: Identifiable {
+    public var id: Self { self }
 }
 
 extension Route: View {
@@ -38,6 +43,8 @@ extension Route: View {
                     CatalogView()
                 case .details:
                     ProductDetailView()
+                case .cart:
+                    CartView()
             }
         }
     }
